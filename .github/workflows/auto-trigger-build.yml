@@ -66,7 +66,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          DISTROS="\"8\",\"9\",\"10\""
+          DISTROS="\"10\",\"9\",\"8\""
           TARGET_WORKFLOW=".github/workflows/self-host-amd-build.yml"
           if ! gh api repos/${{ github.repository }}/contents/${TARGET_WORKFLOW} --jq '.path' &>/dev/null; then
             echo "Workflow ${TARGET_WORKFLOW} not found. Skipping AMD64 build triggers."
@@ -89,7 +89,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          DISTROS="\"8\",\"9\",\"10\""
+          DISTROS="\"10\",\"9\",\"8\""
           TARGET_WORKFLOW=".github/workflows/self-host-arm-build.yml"
           if ! gh api repos/${{ github.repository }}/contents/${TARGET_WORKFLOW} --jq '.path' &>/dev/null; then
             echo "Workflow ${TARGET_WORKFLOW} not found. Skipping ARM64 build triggers."
